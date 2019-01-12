@@ -6,7 +6,7 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Snake!");
 	sf::Event event;
 
-	// make and declare texture variables //
+	// declare and define texture variables //
 	sf::Texture t1, t2;
 	t1.loadFromFile("images/white.png");
 	t2.loadFromFile("images/red.png");
@@ -27,12 +27,15 @@ int main()
 
 		window.clear();
 
-		for(int i=0; i<textureSize; i++)
-			for (int j = 0; j <textureSize; j++)
+		for (int i = 0; i < 800; i += 16)
+		{
+			for (int j = 0; j < 600; j += 15)
 			{
-				sprite1.setPosition(i*textureSize, j*textureSize);
+				sprite1.setPosition(i, j);
 				window.draw(sprite1);
 			}
+		}
+			
 
 
 	}
